@@ -1,0 +1,116 @@
+/*Фрилансер по жизни  https://www.youtube.com/watch?v=zs1r8yafTE8 */
+
+body {
+  background-color: blue;
+}
+.menu__icon {
+  display: none;
+}
+/* когда body._lock вместе то сайт не будит скролиться за меню */
+body._lock {  
+  overflow: hidden;
+}
+.menu__body {
+  position: relative;
+  /* min-height: 70px; */
+  border: 1px solid red;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  /* max-width: 300px;
+  width: 100%; */
+  border: 1px solid red;
+} 
+.menu__link {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.5s;
+}
+.menu__link:active,
+.menu__link:focus,
+.menu__link:hover {
+  border-color: red;
+}
+
+
+@media(max-width: 670px) {
+  /* burger, рисуем палочки */
+  .menu__icon {   
+      z-index: 13;
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+  }
+  .menu__icon span,
+  .menu__icon::before,
+  .menu__icon::after {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: #fff;
+  }
+  .menu__icon::before,
+  .menu__icon::after {
+      content: '';
+  }
+  .menu__icon::before {
+      top: 0;
+  }
+  .menu__icon::after {
+      bottom: 0;
+  }
+  .menu__icon span {
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active span {
+    /* //убираем среднюю полоску в бургере при эктиве */
+      transform: scale(0) translate(0px, -50%); 
+  }
+  /* //поворачиваем палочки чтоб получился крестик */
+  .menu__icon._active::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0, -50%);
+  }
+  .menu__icon._active::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0, 50%);
+  }
+  /* //формируем тело меню */
+  .menu__body {
+      position: fixed;
+      /* position: absolute; прокручивается вместе с сайтом а при fixed всегда в одном месте */
+      top: 0;
+      /* убирать меню/transform: translate(-100%, 0px);  тоже убирает меню вместо left */
+      left: -100%;   
+      /* width: 100%;
+      height: 100%; */
+      /* место вокруг меню */
+      padding: 100px 30px 30px 60px;  
+      background-color: rgba(12, 12, 12, 0.9);
+      transition: left 0.8s ease 0s;
+      z-index: 12;
+      /* если будит верхняя плашка дергаться. Но у меня не было такого
+      // overflow: auto;  */
+  }
+
+  /* //класс _active добавила в html к <nav class="menu__body _active"> */
+  .menu__body._active { 
+    /* появляется меню. И Если делать через transform: translate(0px, 0px);  */
+      left: 0;  
+  }
+  .menu {  
+      flex-direction: column;
+  }
+
+  /* //отступы вниз в li . Все li вложенные(>) в menu*/
+  .menu > li { 
+      margin: 0 0 25px 0;
+  }
+
+}
