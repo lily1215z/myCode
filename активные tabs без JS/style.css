@@ -1,0 +1,48 @@
+.card__tabs {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1.1px;
+  border: 1px solid red;
+}
+
+/* делаем бледно-черные не активные ссылки */
+.card__tabs label {
+    margin-right: 35px;
+    font-weight: 900;
+    opacity: 0.6;  
+}
+.card__tabs > input + label {
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(96, 110, 117, 0.3);
+}
+.card__tabs > input{
+  display: none;
+}
+.card__tabs > label {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* когда ссылка активная и при ховере - будит яркая */
+.card__tabs > label:hover,
+.card__tabs > input:checked + label {
+  padding-bottom: 5px;
+  border-bottom: 2px solid orange;
+  opacity: 1;
+}
+.card__tabs-item  {
+  margin-top: 40px;
+}
+.card__tabs-item > div{
+  display: none;
+}
+#tab_one:checked ~ .card__tabs-item > div:nth-of-type(1),
+#tab_two:checked ~ .card__tabs-item > div:nth-of-type(2),
+#tab_three:checked ~ .card__tabs-item > div:nth-of-type(3) {
+  display: block;
+}
+
+.card__tabs-text {
+  margin-top: 20px;
+}
