@@ -1,0 +1,38 @@
+.rate-star p { 
+    font-size: 20px;
+ }
+
+ .star {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+ }
+
+ .star:before {
+  content: '★★★★★';
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: gray;
+ }
+
+ .star:after {
+  content: '★★★★★';
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: orange;
+  overflow: hidden;
+ }
+
+ .star-4:after { 
+    width: 80%; 
+ }
+
+.star-3:after { 
+    width: 60%; 
+ }
+
+ .star-2:after { 
+    width: 40%; 
+}
