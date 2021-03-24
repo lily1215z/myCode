@@ -114,3 +114,13 @@ body._lock {
   }
 
 }
+
+
+
+////////////////////////////// Просто информация
+ .menu__body.active { //обращаемся через active когда нужно в открытом меню что-то
+    min-height: 500px;
+}
+.icon-menu.active span{
+    background-color: #fff; //меняем цвет крестика-бургера
+}
