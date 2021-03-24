@@ -1,0 +1,96 @@
+
+/* // Слайдер, в котором стрелки делаются все в scss
+// .sale - это название всей секции */
+.sale .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 270px;
+    right: 10%;
+}
+/* // если удваивается дотс и bg позади дотса нужно задавать всем высоты дотса */
+.sale .slick-dots button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color: #BEDAD8;
+    border-radius: 50%;
+}
+.sale .slick-dots li {
+    margin-left: 20px;
+}
+.sale .slick-dots li:first-child {
+    margin-left: 0;
+}
+.sale .slick-dots .slick-active {
+    background-color: green;
+}
+
+.sale .slick-arrow {
+    position: absolute;
+    bottom: 180px;
+    font-size: 0;
+    border: none;
+    outline: transparent;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 6;
+}
+
+.sale__inner .slick-arrow.slick-next {
+    background-image: url(../images/prev.png);
+    left: 25px;
+}
+
+.sale .slick-arrow.slick-prev {
+    background-image: url(../images/next.png);
+    left: 80px;
+}
+
+/* //если нужен активная картинка а не дотс
+//.секция .имя-слайдера .сам-слайдер-активный */
+
+.card .card__size-slider .slick-slide.slick-current {
+    background-color:red;
+}
+
+
+
+/* Слайдер, в котором стрелки делаются через js */
+
+/* .sale-slider__pagination {
+  position: relative;
+  display: flex;
+  margin-top: -190px;
+  margin-left: 40px;
+  .slick-arrow {
+      width: 45px;
+      height: 45px;
+      background-color: transparent;
+  }
+  .slick-dots {
+      position: absolute;
+      right: 60px;
+      display: flex;
+      li {
+          & + li {
+              margin-left: 20px;
+          }
+          button {
+              width: 10px;
+              height: 10px;
+              font-size: 0;
+              border-radius: 50%;
+              background-color: #BEDAD8;
+          }
+          &.slick-active {
+              button {
+                  background-color: $green;
+              }
+          }
+      }
+  }
+} */
