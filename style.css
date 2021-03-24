@@ -1,0 +1,37 @@
+
+/* //прячем кнопку ,,Фильтр,, по кот будит выезжать сам фильтр. Вкл при адаптиве */
+.catalog__main-filter-move {
+  display: none;
+  padding: 5px 0px 10px 50px;
+  cursor: pointer;
+}
+/* //прячем кнопку закрытия. Покажем ее при адаптиве */
+.catalog__filter-close {
+  display: none;
+  text-align: right;
+  padding: 7px;
+  color: #0b1c4d;
+  cursor: pointer;
+}
+
+@media(max-width: 900px) {
+    .catalog__filter {
+        position: absolute;
+        top: 0px;  
+        left: -100%;
+        background-color: grey;
+        z-index: 13;
+        /* max-width: 275px; */
+        padding: 0 30px 20px 10px;
+        transition: left 0.8s ease 0s;
+        
+    }
+    .catalog__filter._active {
+        left: 0;
+    }
+    .catalog__main-filter-move,
+    .catalog__filter-close {
+        display: block;
+    }
+ 
+}
